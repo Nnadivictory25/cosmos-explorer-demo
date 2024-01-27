@@ -9,7 +9,7 @@ export const load: PageServerLoad = async () => {
         if (contentType && contentType.startsWith("text/html")) {
             console.log("Response is HTML");
             const htmlResponse = await res.text();
-            console.log({htmlResponse});
+            console.log(htmlResponse);
             
             return; 
         }
