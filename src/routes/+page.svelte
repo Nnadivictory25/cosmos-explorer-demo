@@ -5,7 +5,6 @@
 	import { Button } from '$lib/components/ui/button';
 	import { SortAsc, SortDesc } from 'lucide-svelte';
 	import { fade } from 'svelte/transition';
-    
 
 	type CoinData = {
 		id: string;
@@ -105,7 +104,7 @@
 		src="https://assets.coingecko.com/coins/images/1481/large/cosmos_hub.png?1696502525"
 		alt="cosmos logo"
 	/>
-	<h1 class="text-2xl font-bold" >Check out the Cosmos Ecosystem !</h1>
+	<h1 class="text-2xl font-bold">Check out the Cosmos Ecosystem !</h1>
 	<p>
 		Visit <a class="text-blue-500 underline" href="https://cosmos.network">Cosmos.network</a> to learn
 		more about cosmos
@@ -162,7 +161,9 @@
 
 <div class="mt-12">
 	{#if filteredCoins.length === 0}
-		<p transition:fade class="text-center font-bold text-red-400 text-lg uppercase">No results found for your search :)</p>
+		<p transition:fade class="text-center text-lg font-bold uppercase text-red-400">
+			No results found for your search :)
+		</p>
 	{:else}
 		<Table.Root>
 			<Table.Header>
@@ -176,7 +177,7 @@
 			</Table.Header>
 			<Table.Body>
 				{#each filteredCoins as { id, name, market_cap, image, current_price, price_change_percentage_24h, symbol }, i (id)}
-					<Table.Row >
+					<Table.Row>
 						<Table.Cell class="font-medium">{i + 1}</Table.Cell>
 						<Table.Cell class="flex items-center gap-2 font-medium"
 							><img class="w-11 rounded-full" src={image} alt="" />
