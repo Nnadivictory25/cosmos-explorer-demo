@@ -35,6 +35,7 @@
 	};
 
 	export let data: PageData;
+    console.log({data});
 	let searchTerm: string = '';
 
 	const modifiedCoins: CoinData[] = data.coins.map((coin: CoinData) => ({
